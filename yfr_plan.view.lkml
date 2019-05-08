@@ -6,7 +6,6 @@ view: yfr_plan {
     sql_table_name: client_assessment_data;;
 
     dimension: id {
-        label: "Id -- YFR Plan"
         primary_key: yes
         sql: ${TABLE}.id;;
     }

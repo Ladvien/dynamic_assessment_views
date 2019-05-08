@@ -6,7 +6,6 @@ view: ces_for_families___vi_fspdat_v2 {
     sql_table_name: client_assessment_data;;
 
     dimension: id {
-        label: "Id -- CES for Families - VI-FSPDAT v2"
         primary_key: yes
         sql: ${TABLE}.id;;
     }

@@ -6,7 +6,6 @@ view: under_construction___do_not_use_justice_discharge___spdat_youth {
     sql_table_name: client_assessment_data;;
 
     dimension: id {
-        label: "Id -- [UNDER CONSTRUCTION - DO NOT USE] Justice Discharge - SPDAT (Youth)"
         primary_key: yes
         sql: ${TABLE}.id;;
     }

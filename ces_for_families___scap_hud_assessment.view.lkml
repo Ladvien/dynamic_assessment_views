@@ -6,7 +6,6 @@ view: ces_for_families___scap_hud_assessment {
     sql_table_name: client_assessment_data;;
 
     dimension: id {
-        label: "Id -- CES For Families - SCAP HUD Assessment"
         primary_key: yes
         sql: ${TABLE}.id;;
     }

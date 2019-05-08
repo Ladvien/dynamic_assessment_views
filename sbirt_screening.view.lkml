@@ -6,7 +6,6 @@ view: sbirt_screening {
     sql_table_name: client_assessment_data;;
 
     dimension: id {
-        label: "Id -- SBIRT Screening"
         primary_key: yes
         sql: ${TABLE}.id;;
     }

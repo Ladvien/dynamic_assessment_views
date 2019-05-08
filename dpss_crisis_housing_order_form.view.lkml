@@ -6,7 +6,6 @@ view: dpss_crisis_housing_order_form {
     sql_table_name: client_assessment_data;;
 
     dimension: id {
-        label: "Id -- DPSS Crisis Housing Order Form"
         primary_key: yes
         sql: ${TABLE}.id;;
     }

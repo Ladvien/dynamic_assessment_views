@@ -6,7 +6,6 @@ view: yfr_program_interest_screening_form {
     sql_table_name: client_assessment_data;;
 
     dimension: id {
-        label: "Id -- YFR Program Interest Screening Form"
         primary_key: yes
         sql: ${TABLE}.id;;
     }

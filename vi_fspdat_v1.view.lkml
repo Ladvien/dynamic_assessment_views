@@ -6,7 +6,6 @@ view: vi_fspdat_v1 {
     sql_table_name: client_assessment_data;;
 
     dimension: id {
-        label: "Id -- VI-FSPDAT v1"
         primary_key: yes
         sql: ${TABLE}.id;;
     }
