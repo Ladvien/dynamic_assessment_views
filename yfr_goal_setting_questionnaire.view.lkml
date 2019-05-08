@@ -6,7 +6,6 @@ view: yfr_goal_setting_questionnaire {
 	sql_table_name: client_assessment_data;;
 
 	dimension: id {
-        view_label: "YFR Goal Setting Questionnaire"
         label: "Id -- YFR Goal Setting Questionnaire"
         primary_key: yes
         sql: ${TABLE}.id;;

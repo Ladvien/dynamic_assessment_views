@@ -6,7 +6,6 @@ view: ces_for_individuals___ces_survey_part_2_assessment_only {
 	sql_table_name: client_assessment_data;;
 
 	dimension: id {
-        view_label: "CES for Individuals - CES Survey Part 2 (Assessment Only)"
         label: "Id -- CES for Individuals - CES Survey Part 2 (Assessment Only)"
         primary_key: yes
         sql: ${TABLE}.id;;

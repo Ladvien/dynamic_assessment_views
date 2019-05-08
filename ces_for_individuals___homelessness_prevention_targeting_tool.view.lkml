@@ -6,7 +6,6 @@ view: ces_for_individuals___homelessness_prevention_targeting_tool {
 	sql_table_name: client_assessment_data;;
 
 	dimension: id {
-        view_label: "CES for Individuals - Homelessness Prevention Targeting Tool"
         label: "Id -- CES for Individuals - Homelessness Prevention Targeting Tool"
         primary_key: yes
         sql: ${TABLE}.id;;
