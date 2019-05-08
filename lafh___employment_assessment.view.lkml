@@ -1,4 +1,4 @@
-include: "//clarity_basemodel/interface_custom_assessments.view.lkml"
+include: "//lookml_remote_test/interface_custom_assessments.view.lkml"
 view: lafh___employment_assessment {
 
 	extends: [interface_custom_assessments]

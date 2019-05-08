@@ -1,4 +1,4 @@
-include: "//clarity_basemodel/interface_custom_assessments.view.lkml"
+include: "//lookml_remote_test/interface_custom_assessments.view.lkml"
 view: ces_for_families___scap_hud_assessment {
 
 	extends: [interface_custom_assessments]

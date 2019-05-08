@@ -1,4 +1,4 @@
-include: "//clarity_basemodel/interface_custom_assessments.view.lkml"
+include: "//lookml_remote_test/interface_custom_assessments.view.lkml"
 view: ces_for_youth___full_spdat {
 
 	extends: [interface_custom_assessments]

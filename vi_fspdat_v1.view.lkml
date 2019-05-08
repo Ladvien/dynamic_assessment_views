@@ -1,4 +1,4 @@
-include: "//clarity_basemodel/interface_custom_assessments.view.lkml"
+include: "//lookml_remote_test/interface_custom_assessments.view.lkml"
 view: vi_fspdat_v1 {
 
 	extends: [interface_custom_assessments]

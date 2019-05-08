@@ -1,4 +1,4 @@
-include: "//clarity_basemodel/interface_custom_assessments.view.lkml"
+include: "//lookml_remote_test/interface_custom_assessments.view.lkml"
 view: ces_for_individuals___ces_survey_part_1 {
 
 	extends: [interface_custom_assessments]
