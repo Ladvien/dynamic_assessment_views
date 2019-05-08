@@ -16,6 +16,7 @@ view: interface_custom_assessments {
   }
 
   dimension: assessment_score {
+    label: "Score"
     type: number
     value_format: "0.##"
     sql: ${client_assessment_scores.score} ;;
@@ -23,14 +24,12 @@ view: interface_custom_assessments {
 
   dimension: sub_score {
     type: number
-    group_label: "Sub-Scores (BETA)"
     label: "Sub Score"
     sql: ${client_assessment_scores.sub_score} ;;
   }
 
   dimension: sub_score_description {
     type: string
-    group_label: "Sub-Scores (BETA)"
     label: "Sub Score Description"
     sql: ${client_assessment_scores.sub_score_description};;
   }
