@@ -1,4 +1,4 @@
-include: "interface_custom_assessments.view.lkml"
+include: "//clarity_basemodel/explore_hmis_performance.view.lkml"
 view: dpss_crisis_housing_order_form {
 
 	extends: [interface_custom_assessments]

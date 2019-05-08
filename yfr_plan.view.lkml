@@ -1,4 +1,4 @@
-include: "interface_custom_assessments.view.lkml"
+include: "//clarity_basemodel/explore_hmis_performance.view.lkml"
 view: yfr_plan {
 
 	extends: [interface_custom_assessments]

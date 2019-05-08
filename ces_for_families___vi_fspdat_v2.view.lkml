@@ -1,4 +1,4 @@
-include: "interface_custom_assessments.view.lkml"
+include: "//clarity_basemodel/explore_hmis_performance.view.lkml"
 view: ces_for_families___vi_fspdat_v2 {
 
 	extends: [interface_custom_assessments]

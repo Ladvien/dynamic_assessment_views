@@ -1,4 +1,4 @@
-include: "interface_custom_assessments.view.lkml"
+include: "//clarity_basemodel/explore_hmis_performance.view.lkml"
 view: copy_of_ces_for_individuals___ces_survey_part_1 {
 
 	extends: [interface_custom_assessments]
