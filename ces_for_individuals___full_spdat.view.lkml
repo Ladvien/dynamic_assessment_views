@@ -6,11 +6,11 @@ view: ces_for_individuals___full_spdat {
 	sql_table_name: client_assessment_data;;
 
 	dimension: id {
+        view_label: "CES for Individuals - Full SPDAT"
         label: "Id -- CES for Individuals - Full SPDAT"
         primary_key: yes
         sql: ${TABLE}.id;;
     }
-
 	######## Begin: Assessment Questions ############
 
 	dimension: c_FullSPDAT_Password {

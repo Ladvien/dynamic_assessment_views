@@ -6,11 +6,11 @@ view: ces_for_individuals___homelessness_prevention_targeting_tool {
 	sql_table_name: client_assessment_data;;
 
 	dimension: id {
+        view_label: "CES for Individuals - Homelessness Prevention Targeting Tool"
         label: "Id -- CES for Individuals - Homelessness Prevention Targeting Tool"
         primary_key: yes
         sql: ${TABLE}.id;;
     }
-
 	######## Begin: Assessment Questions ############
 
 	dimension: c_30_days_vacate_notice {
@@ -68,15 +68,15 @@ view: ces_for_individuals___homelessness_prevention_targeting_tool {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Discharged_From_Insitution' AS INT))
          );;
     }
-	dimension: c_Doubled_Up_Household_To_Vacate {
+	dimension: c_Doubled_Up__Household_To_Vacate {
         label: "If DOUBLED UP, household/adult/youth has been told by the lease holder to vacate the unit. FSC/CES program staff has verified with lease holder that prospective participant is no longer welcome and must vacate."
         group_label: "Questions"
         sql: (SELECT pl.value_name
             FROM picklist AS pl
-            WHERE pl.field_name = 'c_Doubled_Up_Household_To_Vacate'
+            WHERE pl.field_name = 'c_Doubled_Up__Household_To_Vacate'
                 AND pl.code <> ''
-                AND IF(COLUMN_GET(${TABLE}.custom_data, 'c_Doubled_Up_Household_To_Vacate' AS INT) IS NULL, FALSE, 
-                       pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Doubled_Up_Household_To_Vacate' AS INT))
+                AND IF(COLUMN_GET(${TABLE}.custom_data, 'c_Doubled_Up__Household_To_Vacate' AS INT) IS NULL, FALSE, 
+                       pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Doubled_Up__Household_To_Vacate' AS INT))
          );;
     }
 	dimension: c_Failed_To_Respond_Notice_Within_5_Days {
@@ -168,7 +168,7 @@ view: ces_for_individuals___homelessness_prevention_targeting_tool {
          );;
     }
 	dimension: c_Lease_Holder_Received_Notice_Youth_Or_Adult {
-        label: "If LEASE HOLDER, the Youth has received a notice of Unlawful Detainer ('Eviction') lawsuit by the property owner or manager. An unlawful detainer is a formal eviction that is filed in justice court"
+        label: "If LEASE HOLDER, the Youth has received a notice of Unlawful Detainer ("Eviction") lawsuit by the property owner or manager. An unlawful detainer is a formal eviction that is filed in justice court"
         group_label: "Questions"
         sql: (SELECT pl.value_name
             FROM picklist AS pl

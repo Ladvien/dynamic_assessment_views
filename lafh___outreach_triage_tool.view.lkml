@@ -6,11 +6,11 @@ view: lafh___outreach_triage_tool {
 	sql_table_name: client_assessment_data;;
 
 	dimension: id {
+        view_label: "LAFH - Outreach Triage Tool"
         label: "Id -- LAFH - Outreach Triage Tool"
         primary_key: yes
         sql: ${TABLE}.id;;
     }
-
 	######## Begin: Assessment Questions ############
 
 	dimension: c_Contact_Phone {

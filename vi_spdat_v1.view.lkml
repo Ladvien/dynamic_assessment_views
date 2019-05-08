@@ -6,11 +6,11 @@ view: vi_spdat_v1 {
 	sql_table_name: client_assessment_data;;
 
 	dimension: id {
+        view_label: "VI-SPDAT v1"
         label: "Id -- VI-SPDAT v1"
         primary_key: yes
         sql: ${TABLE}.id;;
     }
-
 	######## Begin: Assessment Questions ############
 
 	dimension:   {

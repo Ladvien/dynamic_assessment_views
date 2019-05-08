@@ -6,11 +6,11 @@ view: dpss_crisis_housing_order_form {
 	sql_table_name: client_assessment_data;;
 
 	dimension: id {
+        view_label: "DPSS Crisis Housing Order Form"
         label: "Id -- DPSS Crisis Housing Order Form"
         primary_key: yes
         sql: ${TABLE}.id;;
     }
-
 	######## Begin: Assessment Questions ############
 
 	dimension: c_TAY_DPSS_Singles {

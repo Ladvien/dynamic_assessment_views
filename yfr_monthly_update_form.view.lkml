@@ -6,11 +6,11 @@ view: yfr_monthly_update_form {
 	sql_table_name: client_assessment_data;;
 
 	dimension: id {
+        view_label: "YFR Monthly Update Form"
         label: "Id -- YFR Monthly Update Form"
         primary_key: yes
         sql: ${TABLE}.id;;
     }
-
 	######## Begin: Assessment Questions ############
 
 	dimension: c_Goals_number_on_YFR_plan_1 {

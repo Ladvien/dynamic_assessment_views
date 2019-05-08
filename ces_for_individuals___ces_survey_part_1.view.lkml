@@ -6,11 +6,11 @@ view: ces_for_individuals___ces_survey_part_1 {
 	sql_table_name: client_assessment_data;;
 
 	dimension: id {
+        view_label: "CES for Individuals - CES Survey Part 1"
         label: "Id -- CES for Individuals - CES Survey Part 1"
         primary_key: yes
         sql: ${TABLE}.id;;
     }
-
 	######## Begin: Assessment Questions ############
 
 	dimension:   {

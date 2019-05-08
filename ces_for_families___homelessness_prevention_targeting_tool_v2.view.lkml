@@ -6,11 +6,11 @@ view: ces_for_families___homelessness_prevention_targeting_tool_v2 {
 	sql_table_name: client_assessment_data;;
 
 	dimension: id {
+        view_label: "CES for Families - Homelessness Prevention Targeting Tool v2"
         label: "Id -- CES for Families - Homelessness Prevention Targeting Tool v2"
         primary_key: yes
         sql: ${TABLE}.id;;
     }
-
 	######## Begin: Assessment Questions ############
 
 	dimension: c_30_days_vacate_notice {
@@ -46,15 +46,15 @@ view: ces_for_families___homelessness_prevention_targeting_tool_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Discharged_From_Insitution' AS INT))
          );;
     }
-	dimension: c_Doubled_Up_Household_To_Vacate {
+	dimension: c_Doubled_Up__Household_To_Vacate {
         label: "If DOUBLED UP, household/adult/youth has been told by the lease holder to vacate the unit. FSC/CES program staff has verified with lease holder that prospective participant is no longer welcome and must vacate."
         group_label: "Questions"
         sql: (SELECT pl.value_name
             FROM picklist AS pl
-            WHERE pl.field_name = 'c_Doubled_Up_Household_To_Vacate'
+            WHERE pl.field_name = 'c_Doubled_Up__Household_To_Vacate'
                 AND pl.code <> ''
-                AND IF(COLUMN_GET(${TABLE}.custom_data, 'c_Doubled_Up_Household_To_Vacate' AS INT) IS NULL, FALSE, 
-                       pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Doubled_Up_Household_To_Vacate' AS INT))
+                AND IF(COLUMN_GET(${TABLE}.custom_data, 'c_Doubled_Up__Household_To_Vacate' AS INT) IS NULL, FALSE, 
+                       pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Doubled_Up__Household_To_Vacate' AS INT))
          );;
     }
 	dimension: c_Failed_To_Respond_Notice_Within_5_Days {

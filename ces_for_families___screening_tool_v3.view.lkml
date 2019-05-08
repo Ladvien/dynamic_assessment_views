@@ -6,11 +6,11 @@ view: ces_for_families___screening_tool_v3 {
 	sql_table_name: client_assessment_data;;
 
 	dimension: id {
+        view_label: "CES for Families - Screening Tool v3"
         label: "Id -- CES for Families - Screening Tool v3"
         primary_key: yes
         sql: ${TABLE}.id;;
     }
-
 	######## Begin: Assessment Questions ############
 
 	dimension: c_Family_Phone {

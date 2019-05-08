@@ -6,11 +6,11 @@ view: yfr_plan {
 	sql_table_name: client_assessment_data;;
 
 	dimension: id {
+        view_label: "YFR Plan"
         label: "Id -- YFR Plan"
         primary_key: yes
         sql: ${TABLE}.id;;
     }
-
 	######## Begin: Assessment Questions ############
 
 	dimension: c_Anticipated_completion_date_1 {

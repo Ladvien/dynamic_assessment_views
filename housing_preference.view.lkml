@@ -6,11 +6,11 @@ view: housing_preference {
 	sql_table_name: client_assessment_data;;
 
 	dimension: id {
+        view_label: "Housing Preference"
         label: "Id -- Housing Preference"
         primary_key: yes
         sql: ${TABLE}.id;;
     }
-
 	######## Begin: Assessment Questions ############
 
 	dimension: c_What_City_Stay_At_Night {

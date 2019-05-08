@@ -6,11 +6,11 @@ view: sbirt_screening {
 	sql_table_name: client_assessment_data;;
 
 	dimension: id {
+        view_label: "SBIRT Screening"
         label: "Id -- SBIRT Screening"
         primary_key: yes
         sql: ${TABLE}.id;;
     }
-
 	######## Begin: Assessment Questions ############
 
 	dimension: c_Alcohol_Use {
