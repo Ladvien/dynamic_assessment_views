@@ -1,18 +1,18 @@
 include: "interface_custom_assessments.view.lkml"
 view: ces_for_families___scap_hud_assessment {
 
-	extends: [interface_custom_assessments]
+    extends: [interface_custom_assessments]
 
-	sql_table_name: client_assessment_data;;
+    sql_table_name: client_assessment_data;;
 
-	dimension: id {
+    dimension: id {
         label: "Id -- CES For Families - SCAP HUD Assessment"
         primary_key: yes
         sql: ${TABLE}.id;;
     }
-	######## Begin: Assessment Questions ############
+    ######## Begin: Assessment Questions ############
 
-	dimension: c_Referred_Method {
+    dimension: c_Referred_Method {
         label: "Referred Method"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -23,7 +23,7 @@ view: ces_for_families___scap_hud_assessment {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Referred_Method' AS INT))
          );;
     }
-	dimension: c_First_Prevention_Homelessness {
+    dimension: c_First_Prevention_Homelessness {
         label: "First time at-risk of homelessness"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -34,7 +34,7 @@ view: ces_for_families___scap_hud_assessment {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_First_Prevention_Homelessness' AS INT))
          );;
     }
-	dimension: c_Homelessness_Child {
+    dimension: c_Homelessness_Child {
         label: "Experience homelessness as a child"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -45,7 +45,7 @@ view: ces_for_families___scap_hud_assessment {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Homelessness_Child' AS INT))
          );;
     }
-	dimension: c_Youth_Runaway {
+    dimension: c_Youth_Runaway {
         label: "Ran away from home or a foster care home"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -56,7 +56,7 @@ view: ces_for_families___scap_hud_assessment {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Youth_Runaway' AS INT))
          );;
     }
-	dimension: c_Adult_Probation {
+    dimension: c_Adult_Probation {
         label: "Been on adult probation"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -67,7 +67,7 @@ view: ces_for_families___scap_hud_assessment {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Adult_Probation' AS INT))
          );;
     }
-	dimension: c_Referred_Method_Other {
+    dimension: c_Referred_Method_Other {
         label: "Other referral method"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -78,7 +78,7 @@ view: ces_for_families___scap_hud_assessment {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Referred_Method_Other' AS INT))
          );;
     }
-	dimension: c_Completed_SA {
+    dimension: c_Completed_SA {
         label: "When was the full Standardized Assessment completed?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -89,7 +89,7 @@ view: ces_for_families___scap_hud_assessment {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Completed_SA' AS INT))
          );;
     }
-	dimension: c_HousingAssistance_OtherResources {
+    dimension: c_HousingAssistance_OtherResources {
         label: "Other Resources"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -100,7 +100,7 @@ view: ces_for_families___scap_hud_assessment {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_HousingAssistance_OtherResources' AS INT))
          );;
     }
-	dimension: c_HousingAssistance_EvictionPrevent {
+    dimension: c_HousingAssistance_EvictionPrevent {
         label: "Eviction Prevention"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -111,7 +111,7 @@ view: ces_for_families___scap_hud_assessment {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_HousingAssistance_EvictionPrevent' AS INT))
          );;
     }
-	dimension: c_HousingAssistance_FamilyHousingAs {
+    dimension: c_HousingAssistance_FamilyHousingAs {
         label: "Family Housing Assistance Payment"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -122,7 +122,7 @@ view: ces_for_families___scap_hud_assessment {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_HousingAssistance_FamilyHousingAs' AS INT))
          );;
     }
-	dimension: c_HousingAssistance_HPRP {
+    dimension: c_HousingAssistance_HPRP {
         label: "HPRP"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -133,7 +133,7 @@ view: ces_for_families___scap_hud_assessment {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_HousingAssistance_HPRP' AS INT))
          );;
     }
-	dimension: c_HousingAssistance_Low_IncomeAffo {
+    dimension: c_HousingAssistance_Low_IncomeAffo {
         label: "Low-Income/Affordable Housing"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -144,7 +144,7 @@ view: ces_for_families___scap_hud_assessment {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_HousingAssistance_Low_IncomeAffo' AS INT))
          );;
     }
-	dimension: c_HousingAssistance_None {
+    dimension: c_HousingAssistance_None {
         label: "None"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -155,7 +155,7 @@ view: ces_for_families___scap_hud_assessment {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_HousingAssistance_None' AS INT))
          );;
     }
-	dimension: c_HousingAssistance_Section8Voucher {
+    dimension: c_HousingAssistance_Section8Voucher {
         label: "Section 8 Voucher/Housing Subsidy"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -166,7 +166,7 @@ view: ces_for_families___scap_hud_assessment {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_HousingAssistance_Section8Voucher' AS INT))
          );;
     }
-	dimension: c_HousingAssistance_FamilyFriends {
+    dimension: c_HousingAssistance_FamilyFriends {
         label: "Family/Friends"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -177,7 +177,7 @@ view: ces_for_families___scap_hud_assessment {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_HousingAssistance_FamilyFriends' AS INT))
          );;
     }
-	dimension: c_First_Time_Homeless {
+    dimension: c_First_Time_Homeless {
         label: "Is this your first time homeless?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -188,7 +188,7 @@ view: ces_for_families___scap_hud_assessment {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_First_Time_Homeless' AS INT))
          );;
     }
-	dimension: c_Previously_Homeless {
+    dimension: c_Previously_Homeless {
         label: "Were you ever previously homeless? "
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -199,7 +199,7 @@ view: ces_for_families___scap_hud_assessment {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Previously_Homeless' AS INT))
          );;
     }
-	dimension: c_Exit_Date {
+    dimension: c_Exit_Date {
         label: "Exit date from SCAP"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -210,7 +210,7 @@ view: ces_for_families___scap_hud_assessment {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Exit_Date' AS INT))
          );;
     }
-	dimension: c_Circumstances {
+    dimension: c_Circumstances {
         label: "What circumstances contributed to your current housing situation?  (Choose any that apply)"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -221,7 +221,7 @@ view: ces_for_families___scap_hud_assessment {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Circumstances' AS INT))
          );;
     }
-	dimension: c_Reason_For_Leaving_CFAM {
+    dimension: c_Reason_For_Leaving_CFAM {
         label: "Reason for Leaving CFAM"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -232,6 +232,6 @@ view: ces_for_families___scap_hud_assessment {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Reason_For_Leaving_CFAM' AS INT))
          );;
     }
-	######## End: Assessment Questions ############
+    ######## End: Assessment Questions ############
 
 }

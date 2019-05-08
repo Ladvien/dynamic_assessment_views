@@ -1,18 +1,18 @@
 include: "interface_custom_assessments.view.lkml"
 view: ces_for_families___vi_fspdat_v2 {
 
-	extends: [interface_custom_assessments]
+    extends: [interface_custom_assessments]
 
-	sql_table_name: client_assessment_data;;
+    sql_table_name: client_assessment_data;;
 
-	dimension: id {
+    dimension: id {
         label: "Id -- CES for Families - VI-FSPDAT v2"
         primary_key: yes
         sql: ${TABLE}.id;;
     }
-	######## Begin: Assessment Questions ############
+    ######## Begin: Assessment Questions ############
 
-	dimension:   {
+    dimension:   {
         label: " "
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -23,7 +23,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, ' ' AS INT))
          );;
     }
-	dimension: c_Contact_Phone {
+    dimension: c_Contact_Phone {
         label: "Contact Phone"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -34,7 +34,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Contact_Phone' AS INT))
          );;
     }
-	dimension: c_Contact_Email {
+    dimension: c_Contact_Email {
         label: "Contact Email"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -45,7 +45,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Contact_Email' AS INT))
          );;
     }
-	dimension: c_Interviewer_Organization {
+    dimension: c_Interviewer_Organization {
         label: "Interviewer's Organization"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -56,7 +56,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Interviewer_Organization' AS INT))
          );;
     }
-	dimension: c_Interviewer_Email {
+    dimension: c_Interviewer_Email {
         label: "Interviewer's Email"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -67,7 +67,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Interviewer_Email' AS INT))
          );;
     }
-	dimension: c_Interviewer_Phone {
+    dimension: c_Interviewer_Phone {
         label: "Interviewer's Phone"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -78,7 +78,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Interviewer_Phone' AS INT))
          );;
     }
-	dimension: c_Interviewer_Name {
+    dimension: c_Interviewer_Name {
         label: "Interviewer's Name"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -89,7 +89,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Interviewer_Name' AS INT))
          );;
     }
-	dimension: c_Receive_Or_Receive_Mental_health_program {
+    dimension: c_Receive_Or_Receive_Mental_health_program {
         label: "Are you currently receiving or have you ever received treatment at a mental health program/clinic?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -100,7 +100,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Receive_Or_Receive_Mental_health_program' AS INT))
          );;
     }
-	dimension: c_Mental_Health_Program_Name {
+    dimension: c_Mental_Health_Program_Name {
         label: "If yes, what is the name of the program/clinic?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -111,7 +111,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Mental_Health_Program_Name' AS INT))
          );;
     }
-	dimension: c_VA_Healthcare_Eligible {
+    dimension: c_VA_Healthcare_Eligible {
         label: "To the best of your knowledge, do you think you are VA Healthcare eligible?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -122,7 +122,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_VA_Healthcare_Eligible' AS INT))
          );;
     }
-	dimension: c_How_Many_Times_DHS_Accessed {
+    dimension: c_How_Many_Times_DHS_Accessed {
         label: "How many times have you accessed services at the DHS site(s) in the last 12 months?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -133,7 +133,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_How_Many_Times_DHS_Accessed' AS INT))
          );;
     }
-	dimension: c_What_City_Stay_At_Night {
+    dimension: c_What_City_Stay_At_Night {
         label: "Client SPA"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -144,7 +144,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_What_City_Stay_At_Night' AS INT))
          );;
     }
-	dimension: c_Community_within_LA {
+    dimension: c_Community_within_LA {
         label: "Community within LA SPA"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -155,7 +155,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Community_within_LA' AS INT))
          );;
     }
-	dimension: c_Evicted_From_Public_Housing_Unit {
+    dimension: c_Evicted_From_Public_Housing_Unit {
         label: "Have you been evicted from a Public Housing Authority Unit? By evicted, I mean has a landlord ever requested you to leave the property? Have you ever received a 3-day notice to quit or vacate the property?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -166,7 +166,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Evicted_From_Public_Housing_Unit' AS INT))
          );;
     }
-	dimension: c_Convicted_Of_Meth_Production {
+    dimension: c_Convicted_Of_Meth_Production {
         label: "Have you ever been convicted of manufacturing or producing methamphetamine?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -177,7 +177,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Convicted_Of_Meth_Production' AS INT))
          );;
     }
-	dimension: c_Required_To_Register_As_Sex_Offender {
+    dimension: c_Required_To_Register_As_Sex_Offender {
         label: "Are you required to register as a sex offender?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -188,7 +188,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Required_To_Register_As_Sex_Offender' AS INT))
          );;
     }
-	dimension: c_Time_Of_Day_Easiest_To_Find {
+    dimension: c_Time_Of_Day_Easiest_To_Find {
         label: "What time of day is easiest to find you there?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -199,7 +199,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Time_Of_Day_Easiest_To_Find' AS INT))
          );;
     }
-	dimension: c_Location_Of_Survey_SPA {
+    dimension: c_Location_Of_Survey_SPA {
         label: "Location of Survey: SPA "
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -210,7 +210,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Location_Of_Survey_SPA' AS INT))
          );;
     }
-	dimension: c_Location_Of_Survey_Region {
+    dimension: c_Location_Of_Survey_Region {
         label: "Location of Survey:  Region"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -221,7 +221,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Location_Of_Survey_Region' AS INT))
          );;
     }
-	dimension: c_Location_Of_Survey_City_Community {
+    dimension: c_Location_Of_Survey_City_Community {
         label: "Location of Survey: City / Community"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -232,7 +232,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Location_Of_Survey_City_Community' AS INT))
          );;
     }
-	dimension: c_How_Many_Months {
+    dimension: c_How_Many_Months {
         label: "How Many Months (1 to 12+)"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -243,7 +243,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_How_Many_Months' AS INT))
          );;
     }
-	dimension: c_Currenlty_Residing_To_Be_Housed_There {
+    dimension: c_Currenlty_Residing_To_Be_Housed_There {
         label: "Is the region where you’re currently residing where you’re looking to be housed?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -254,7 +254,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Currenlty_Residing_To_Be_Housed_There' AS INT))
          );;
     }
-	dimension: c_SPA_List {
+    dimension: c_SPA_List {
         label: "SPA List (1-8)"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -265,7 +265,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_SPA_List' AS INT))
          );;
     }
-	dimension: c_Interest_In_Shared_Housing {
+    dimension: c_Interest_In_Shared_Housing {
         label: "Would you be interested in housing options such as shared housing, a room for rent, or sober living?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -276,7 +276,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Interest_In_Shared_Housing' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_No_Care {
+    dimension: c_DHS_Health_Center_No_Care {
         label: "Does not go for care"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -287,7 +287,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_No_Care' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_USC {
+    dimension: c_DHS_Health_Center_USC {
         label: "LAC + USC Med Center"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -298,7 +298,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_USC' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_UCLA {
+    dimension: c_DHS_Health_Center_UCLA {
         label: "Harbor UCLA Med Center"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -309,7 +309,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_UCLA' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_Rancho {
+    dimension: c_DHS_Health_Center_Rancho {
         label: "Rancho Los Amigos"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -320,7 +320,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_Rancho' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_Martin {
+    dimension: c_DHS_Health_Center_Martin {
         label: "Martin Luther King, Jr. Outpatient Center"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -331,7 +331,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_Martin' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_High {
+    dimension: c_DHS_Health_Center_High {
         label: "High Desert Regional Health Center"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -342,7 +342,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_High' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_Monte {
+    dimension: c_DHS_Health_Center_Monte {
         label: "El Monte Comprehensive Health Center"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -353,7 +353,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_Monte' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_Edward {
+    dimension: c_DHS_Health_Center_Edward {
         label: "Edward R. Roybal Comprehensive Health Center"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -364,7 +364,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_Edward' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_Claude {
+    dimension: c_DHS_Health_Center_Claude {
         label: "H. Claude Hudson Comprehensive Health Center"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -375,7 +375,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_Claude' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_Olive {
+    dimension: c_DHS_Health_Center_Olive {
         label: "Olive View Med Center"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -386,7 +386,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_Olive' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_Hubert {
+    dimension: c_DHS_Health_Center_Hubert {
         label: "Hubert H. Humphrey Comprehensive Health Center"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -397,7 +397,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_Hubert' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_MidValley {
+    dimension: c_DHS_Health_Center_MidValley {
         label: "Mid-Valley Comprehensive Health Center"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -408,7 +408,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_MidValley' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_Antelope {
+    dimension: c_DHS_Health_Center_Antelope {
         label: "Antelope Valley Health Center"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -419,7 +419,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_Antelope' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_Bellflower {
+    dimension: c_DHS_Health_Center_Bellflower {
         label: "Bellflower Health Center"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -430,7 +430,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_Bellflower' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_Other {
+    dimension: c_DHS_Health_Center_Other {
         label: "Other DHS clinic (Specify in Comment)"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -441,7 +441,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_Other' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_Dollarhide {
+    dimension: c_DHS_Health_Center_Dollarhide {
         label: "Dollarhide Health Center"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -452,7 +452,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_Dollarhide' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_Glendale {
+    dimension: c_DHS_Health_Center_Glendale {
         label: "Glendale Health Center"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -463,7 +463,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_Glendale' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_La_Puente {
+    dimension: c_DHS_Health_Center_La_Puente {
         label: "La Puente Health Center"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -474,7 +474,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_La_Puente' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_Lake {
+    dimension: c_DHS_Health_Center_Lake {
         label: "Lake Los Angeles Health Center"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -485,7 +485,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_Lake' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_Little {
+    dimension: c_DHS_Health_Center_Little {
         label: "Little Rock Health Center"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -496,7 +496,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_Little' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_San_Fernando {
+    dimension: c_DHS_Health_Center_San_Fernando {
         label: "San Fernando Health Center"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -507,7 +507,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_San_Fernando' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_South_Antelope {
+    dimension: c_DHS_Health_Center_South_Antelope {
         label: "South Antelope Valley Health Center"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -518,7 +518,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_South_Antelope' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_Wilmington {
+    dimension: c_DHS_Health_Center_Wilmington {
         label: "Wilmington Health Center"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -529,7 +529,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_Wilmington' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_Long_Beach {
+    dimension: c_DHS_Health_Center_Long_Beach {
         label: "Long Beach Comprehensive Health Center"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -540,7 +540,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_Long_Beach' AS INT))
          );;
     }
-	dimension: c_Disability_List_Substance_Abuse {
+    dimension: c_Disability_List_Substance_Abuse {
         label: "Substance Abuse Disorder"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -551,7 +551,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Disability_List_Substance_Abuse' AS INT))
          );;
     }
-	dimension: c_Disability_List_Physical_Disability {
+    dimension: c_Disability_List_Physical_Disability {
         label: "Physical disability"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -562,7 +562,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Disability_List_Physical_Disability' AS INT))
          );;
     }
-	dimension: c_Disability_List_Mental_Health {
+    dimension: c_Disability_List_Mental_Health {
         label: "Mental health disability"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -573,7 +573,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Disability_List_Mental_Health' AS INT))
          );;
     }
-	dimension: c_Disability_List_Developmental {
+    dimension: c_Disability_List_Developmental {
         label: "Developmental disability"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -584,7 +584,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Disability_List_Developmental' AS INT))
          );;
     }
-	dimension: c_Disability_List_Chronic {
+    dimension: c_Disability_List_Chronic {
         label: "Chronic physical illness"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -595,7 +595,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Disability_List_Chronic' AS INT))
          );;
     }
-	dimension: c_Disability_List_HIV {
+    dimension: c_Disability_List_HIV {
         label: "HIV / AIDS"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -606,7 +606,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Disability_List_HIV' AS INT))
          );;
     }
-	dimension: c_Disability_List_None {
+    dimension: c_Disability_List_None {
         label: "None of the above"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -617,7 +617,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Disability_List_None' AS INT))
          );;
     }
-	dimension: c_Disability_List_Doesnt_Know {
+    dimension: c_Disability_List_Doesnt_Know {
         label: "Client Doesn’t Know"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -628,7 +628,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Disability_List_Doesnt_Know' AS INT))
          );;
     }
-	dimension: c_Disability_List_Refused {
+    dimension: c_Disability_List_Refused {
         label: "Client Refused"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -639,7 +639,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Disability_List_Refused' AS INT))
          );;
     }
-	dimension: c_SPA_City_List {
+    dimension: c_SPA_City_List {
         label: "What other cities have you called home within the last year (last 12 months)?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -650,7 +650,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_SPA_City_List' AS INT))
          );;
     }
-	dimension: c_DHS_Health_Center_Other_Comment {
+    dimension: c_DHS_Health_Center_Other_Comment {
         label: "Comment"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -661,7 +661,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DHS_Health_Center_Other_Comment' AS INT))
          );;
     }
-	dimension: c_Error_No_DHS_Option_Checked {
+    dimension: c_Error_No_DHS_Option_Checked {
         label: "Please select at least one DHS checkbox in Question 49."
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -672,7 +672,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Error_No_DHS_Option_Checked' AS INT))
          );;
     }
-	dimension: c_Error_No_Condition {
+    dimension: c_Error_No_Condition {
         label: "Do you think you might have any of the following conditions?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -683,7 +683,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Error_No_Condition' AS INT))
          );;
     }
-	dimension: c_SPA_City_List_other {
+    dimension: c_SPA_City_List_other {
         label: "If none of the above, what city have you called home within the last year (last 12 months)?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -694,7 +694,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_SPA_City_List_other' AS INT))
          );;
     }
-	dimension: c_Participant_ADA_Need {
+    dimension: c_Participant_ADA_Need {
         label: "Participant ADA Need"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -705,7 +705,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Participant_ADA_Need' AS INT))
          );;
     }
-	dimension: c_Staff_Observation_ADA_Need_Mobility {
+    dimension: c_Staff_Observation_ADA_Need_Mobility {
         label: "Staff Observation ADA Need Mobility"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -716,7 +716,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Staff_Observation_ADA_Need_Mobility' AS INT))
          );;
     }
-	dimension: c_Staff_Observation_ADA_Need_Hearing {
+    dimension: c_Staff_Observation_ADA_Need_Hearing {
         label: "Staff Observation ADA Need Hearing"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -727,7 +727,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Staff_Observation_ADA_Need_Hearing' AS INT))
          );;
     }
-	dimension: c_Staff_Observation_ADA_Need_Visual {
+    dimension: c_Staff_Observation_ADA_Need_Visual {
         label: "Staff Observation ADA Need Visual"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -738,7 +738,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Staff_Observation_ADA_Need_Visual' AS INT))
          );;
     }
-	dimension: c_Staff_Observation_ADA_Need_None {
+    dimension: c_Staff_Observation_ADA_Need_None {
         label: "Staff Observation ADA Need None"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -749,7 +749,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Staff_Observation_ADA_Need_None' AS INT))
          );;
     }
-	dimension: c_Error_No_Staff_ADA_Observation_Checked {
+    dimension: c_Error_No_Staff_ADA_Observation_Checked {
         label: " Please select at least one staff ADA observation in Question 59."
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -760,7 +760,7 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Error_No_Staff_ADA_Observation_Checked' AS INT))
          );;
     }
-	dimension: c_Staff_Observation_ADA_need_Communication {
+    dimension: c_Staff_Observation_ADA_need_Communication {
         label: "Staff Observation ADA need Communication"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -771,6 +771,6 @@ view: ces_for_families___vi_fspdat_v2 {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Staff_Observation_ADA_need_Communication' AS INT))
          );;
     }
-	######## End: Assessment Questions ############
+    ######## End: Assessment Questions ############
 
 }

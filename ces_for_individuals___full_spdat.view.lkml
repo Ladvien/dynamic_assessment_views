@@ -1,18 +1,18 @@
 include: "interface_custom_assessments.view.lkml"
 view: ces_for_individuals___full_spdat {
 
-	extends: [interface_custom_assessments]
+    extends: [interface_custom_assessments]
 
-	sql_table_name: client_assessment_data;;
+    sql_table_name: client_assessment_data;;
 
-	dimension: id {
+    dimension: id {
         label: "Id -- CES for Individuals - Full SPDAT"
         primary_key: yes
         sql: ${TABLE}.id;;
     }
-	######## Begin: Assessment Questions ############
+    ######## Begin: Assessment Questions ############
 
-	dimension: c_FullSPDAT_Password {
+    dimension: c_FullSPDAT_Password {
         label: "Enter Password"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -23,7 +23,7 @@ view: ces_for_individuals___full_spdat {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_FullSPDAT_Password' AS INT))
          );;
     }
-	dimension: c_SPDAT_History_Homelessness_Housing {
+    dimension: c_SPDAT_History_Homelessness_Housing {
         label: "Score, History of Homelessness &amp; Housing"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -34,7 +34,7 @@ view: ces_for_individuals___full_spdat {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_SPDAT_History_Homelessness_Housing' AS INT))
          );;
     }
-	dimension: c_SPDAT_Managing_Tenancy {
+    dimension: c_SPDAT_Managing_Tenancy {
         label: "Score, Managing Tenancy"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -45,7 +45,7 @@ view: ces_for_individuals___full_spdat {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_SPDAT_Managing_Tenancy' AS INT))
          );;
     }
-	dimension: c_SPDAT_Score_Abuse_Trauma {
+    dimension: c_SPDAT_Score_Abuse_Trauma {
         label: "Score, Experience of Abuse &amp; Trauma"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -56,7 +56,7 @@ view: ces_for_individuals___full_spdat {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_SPDAT_Score_Abuse_Trauma' AS INT))
          );;
     }
-	dimension: c_SPDAT_Score_Admin_MoneyMgt {
+    dimension: c_SPDAT_Score_Admin_MoneyMgt {
         label: "Score, Personal Administration &amp; Money Management"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -67,7 +67,7 @@ view: ces_for_individuals___full_spdat {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_SPDAT_Score_Admin_MoneyMgt' AS INT))
          );;
     }
-	dimension: c_SPDAT_Score_Interaction_With_EmergencyServices {
+    dimension: c_SPDAT_Score_Interaction_With_EmergencyServices {
         label: "Score, Interaction with Emergency Services"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -78,7 +78,7 @@ view: ces_for_individuals___full_spdat {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_SPDAT_Score_Interaction_With_EmergencyServices' AS INT))
          );;
     }
-	dimension: c_SPDAT_Score_Involvement_InHigher_Risk {
+    dimension: c_SPDAT_Score_Involvement_InHigher_Risk {
         label: "Score, Involvement in Higher Rish and/or Exploitive Situations"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -89,7 +89,7 @@ view: ces_for_individuals___full_spdat {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_SPDAT_Score_Involvement_InHigher_Risk' AS INT))
          );;
     }
-	dimension: c_SPDAT_Score_Legal {
+    dimension: c_SPDAT_Score_Legal {
         label: "Score, Legal"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -100,7 +100,7 @@ view: ces_for_individuals___full_spdat {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_SPDAT_Score_Legal' AS INT))
          );;
     }
-	dimension: c_SPDAT_Score_Meaningful_Activity {
+    dimension: c_SPDAT_Score_Meaningful_Activity {
         label: "Score, Meaningful Daily Activity"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -111,7 +111,7 @@ view: ces_for_individuals___full_spdat {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_SPDAT_Score_Meaningful_Activity' AS INT))
          );;
     }
-	dimension: c_SPDAT_Score_Medication {
+    dimension: c_SPDAT_Score_Medication {
         label: "Score, Medication"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -122,7 +122,7 @@ view: ces_for_individuals___full_spdat {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_SPDAT_Score_Medication' AS INT))
          );;
     }
-	dimension: c_SPDAT_Score_Mental_Wellness {
+    dimension: c_SPDAT_Score_Mental_Wellness {
         label: "Score Mental Health &amp; Wellness &amp; Cognitive Functioning"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -133,7 +133,7 @@ view: ces_for_individuals___full_spdat {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_SPDAT_Score_Mental_Wellness' AS INT))
          );;
     }
-	dimension: c_SPDAT_Score_Physical_Health {
+    dimension: c_SPDAT_Score_Physical_Health {
         label: "Score, Physical Health &amp; Wellness"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -144,7 +144,7 @@ view: ces_for_individuals___full_spdat {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_SPDAT_Score_Physical_Health' AS INT))
          );;
     }
-	dimension: c_SPDAT_Score_Relationships_Networks {
+    dimension: c_SPDAT_Score_Relationships_Networks {
         label: "Score, Social Relationships &amp; networks"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -155,7 +155,7 @@ view: ces_for_individuals___full_spdat {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_SPDAT_Score_Relationships_Networks' AS INT))
          );;
     }
-	dimension: c_SPDAT_Score_Risk_Of_Harm_ToSelf {
+    dimension: c_SPDAT_Score_Risk_Of_Harm_ToSelf {
         label: "Score, Risk of Harm to Self or Others"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -166,7 +166,7 @@ view: ces_for_individuals___full_spdat {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_SPDAT_Score_Risk_Of_Harm_ToSelf' AS INT))
          );;
     }
-	dimension: c_SPDAT_Score_SelfCare_Daily_Living {
+    dimension: c_SPDAT_Score_SelfCare_Daily_Living {
         label: "Score, Self Care &amp; Daily Living Skills"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -177,7 +177,7 @@ view: ces_for_individuals___full_spdat {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_SPDAT_Score_SelfCare_Daily_Living' AS INT))
          );;
     }
-	dimension: c_SPDAT_Score_Substance_Use {
+    dimension: c_SPDAT_Score_Substance_Use {
         label: "Score, Substance Use"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -188,6 +188,6 @@ view: ces_for_individuals___full_spdat {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_SPDAT_Score_Substance_Use' AS INT))
          );;
     }
-	######## End: Assessment Questions ############
+    ######## End: Assessment Questions ############
 
 }

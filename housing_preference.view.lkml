@@ -1,18 +1,18 @@
 include: "interface_custom_assessments.view.lkml"
 view: housing_preference {
 
-	extends: [interface_custom_assessments]
+    extends: [interface_custom_assessments]
 
-	sql_table_name: client_assessment_data;;
+    sql_table_name: client_assessment_data;;
 
-	dimension: id {
+    dimension: id {
         label: "Id -- Housing Preference"
         primary_key: yes
         sql: ${TABLE}.id;;
     }
-	######## Begin: Assessment Questions ############
+    ######## Begin: Assessment Questions ############
 
-	dimension: c_What_City_Stay_At_Night {
+    dimension: c_What_City_Stay_At_Night {
         label: "Client SPA"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -23,7 +23,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_What_City_Stay_At_Night' AS INT))
          );;
     }
-	dimension: c_Community_within_LA {
+    dimension: c_Community_within_LA {
         label: "Community within LA SPA"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -34,7 +34,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Community_within_LA' AS INT))
          );;
     }
-	dimension: c_MonthsInCityComm {
+    dimension: c_MonthsInCityComm {
         label: "How many months have you stayed in that city/community (in months)?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -45,7 +45,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_MonthsInCityComm' AS INT))
          );;
     }
-	dimension: c_MoneytoPHA {
+    dimension: c_MoneytoPHA {
         label: "If you've been evicted from a PHA unit, do you owe money"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -56,7 +56,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_MoneytoPHA' AS INT))
          );;
     }
-	dimension: c_Jailin6Mo {
+    dimension: c_Jailin6Mo {
         label: "Have you been in jail or prison in the last 6 months?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -67,7 +67,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Jailin6Mo' AS INT))
          );;
     }
-	dimension: c_DateofEvictionfromDamage {
+    dimension: c_DateofEvictionfromDamage {
         label: " 9b1. If applicable, approximate month and year of the last eviction due to unit damage: (If you are unsure of the day, please select the first day of the month"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -78,7 +78,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DateofEvictionfromDamage' AS INT))
          );;
     }
-	dimension: c_DateLastConviction {
+    dimension: c_DateLastConviction {
         label: "10b. If yes, when was the month and year of your last conviction? (If you are unsure of the day, please select the first day of the month)"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -89,7 +89,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DateLastConviction' AS INT))
          );;
     }
-	dimension: c_DateLastViolentConviction {
+    dimension: c_DateLastViolentConviction {
         label: "10d. If yes, when was the month and year of your last violent felony conviction? (If you are unsure of the day, please select the first day of the month)"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -100,7 +100,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DateLastViolentConviction' AS INT))
          );;
     }
-	dimension: c_DateofLastEviction {
+    dimension: c_DateofLastEviction {
         label: "8a. If yes, approximate month and year of last eviction (If you are unsure of the day, please select the first day of the month): "
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -111,7 +111,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DateofLastEviction' AS INT))
          );;
     }
-	dimension: c_DateofEvictionfromFraud {
+    dimension: c_DateofEvictionfromFraud {
         label: "9a1. If yes, approximate month and year of the last eviction due to fraud: (If you are unsure of the day, please select the first day of the month"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -122,7 +122,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_DateofEvictionfromFraud' AS INT))
          );;
     }
-	dimension: c_AdultsInUnit {
+    dimension: c_AdultsInUnit {
         label: "7. How many adults will this unit need to accommodate including yourself?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -133,7 +133,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_AdultsInUnit' AS INT))
          );;
     }
-	dimension: c_Felony {
+    dimension: c_Felony {
         label: "10. Have you ever been convicted of a felony?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -144,7 +144,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Felony' AS INT))
          );;
     }
-	dimension: c_Eviction {
+    dimension: c_Eviction {
         label: "8. Have you ever been evicted from housing or abandoned a unit, of which your name was on the lease?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -155,7 +155,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Eviction' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Montebello {
+    dimension: c_OtherHomeCities_Montebello {
         label: "Montebello"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -166,7 +166,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Montebello' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_MontereyPark {
+    dimension: c_OtherHomeCities_MontereyPark {
         label: "MontereyPark"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -177,7 +177,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_MontereyPark' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Newhall {
+    dimension: c_OtherHomeCities_Newhall {
         label: "Newhall"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -188,7 +188,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Newhall' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_None {
+    dimension: c_OtherHomeCities_None {
         label: "None"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -199,7 +199,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_None' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_NorthHills {
+    dimension: c_OtherHomeCities_NorthHills {
         label: "North Hills"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -210,7 +210,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_NorthHills' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Norwalk {
+    dimension: c_OtherHomeCities_Norwalk {
         label: "Norwalk"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -221,7 +221,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Norwalk' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Palmdale {
+    dimension: c_OtherHomeCities_Palmdale {
         label: "Palmdale"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -232,7 +232,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Palmdale' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_PalosVerdesEsta {
+    dimension: c_OtherHomeCities_PalosVerdesEsta {
         label: "Palos Verdes Estates"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -243,7 +243,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_PalosVerdesEsta' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Paramount {
+    dimension: c_OtherHomeCities_Paramount {
         label: "Paramount"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -254,7 +254,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Paramount' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Pasadena {
+    dimension: c_OtherHomeCities_Pasadena {
         label: "Pasadena"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -265,7 +265,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Pasadena' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_PicoRivera {
+    dimension: c_OtherHomeCities_PicoRivera {
         label: "Pico Rivera"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -276,7 +276,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_PicoRivera' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Pomona {
+    dimension: c_OtherHomeCities_Pomona {
         label: "Pomona"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -287,7 +287,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Pomona' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_RanchoPalosVerd {
+    dimension: c_OtherHomeCities_RanchoPalosVerd {
         label: "Rancho Palos Verdes"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -298,7 +298,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_RanchoPalosVerd' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_RedondoBeach {
+    dimension: c_OtherHomeCities_RedondoBeach {
         label: "Redondo Beach"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -309,7 +309,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_RedondoBeach' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_RollingHills {
+    dimension: c_OtherHomeCities_RollingHills {
         label: "Rolling Hills"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -320,7 +320,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_RollingHills' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_RollingHillsEst {
+    dimension: c_OtherHomeCities_RollingHillsEst {
         label: "Rolling Hills Estates"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -331,7 +331,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_RollingHillsEst' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Rosemead {
+    dimension: c_OtherHomeCities_Rosemead {
         label: "Rosemead"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -342,7 +342,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Rosemead' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_SandCanyon {
+    dimension: c_OtherHomeCities_SandCanyon {
         label: "Sand Canyon"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -353,7 +353,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_SandCanyon' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_SanDimas {
+    dimension: c_OtherHomeCities_SanDimas {
         label: "San Dimas"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -364,7 +364,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_SanDimas' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_SanFernando {
+    dimension: c_OtherHomeCities_SanFernando {
         label: "San Fernando"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -375,7 +375,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_SanFernando' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_SanGabriel {
+    dimension: c_OtherHomeCities_SanGabriel {
         label: "San Gabriel"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -386,7 +386,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_SanGabriel' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_SanMarino {
+    dimension: c_OtherHomeCities_SanMarino {
         label: "San Marino"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -397,7 +397,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_SanMarino' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_SantaClarita {
+    dimension: c_OtherHomeCities_SantaClarita {
         label: "Santa Clarita"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -408,7 +408,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_SantaClarita' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_SantaFeSprings {
+    dimension: c_OtherHomeCities_SantaFeSprings {
         label: "Santa Fe Springs"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -419,7 +419,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_SantaFeSprings' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_SantaMonica {
+    dimension: c_OtherHomeCities_SantaMonica {
         label: "Santa Monica"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -430,7 +430,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_SantaMonica' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Saugua {
+    dimension: c_OtherHomeCities_Saugua {
         label: "Saugua"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -441,7 +441,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Saugua' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_SierraMadre {
+    dimension: c_OtherHomeCities_SierraMadre {
         label: "Sierra Madre"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -452,7 +452,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_SierraMadre' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_SignalHill {
+    dimension: c_OtherHomeCities_SignalHill {
         label: "Signal Hill"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -463,7 +463,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_SignalHill' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_SouthElMonte {
+    dimension: c_OtherHomeCities_SouthElMonte {
         label: "South El Monte"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -474,7 +474,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_SouthElMonte' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_SouthGate {
+    dimension: c_OtherHomeCities_SouthGate {
         label: "South Gate"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -485,7 +485,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_SouthGate' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_SouthPasadena {
+    dimension: c_OtherHomeCities_SouthPasadena {
         label: "South Pasadena"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -496,7 +496,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_SouthPasadena' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_TempleCity {
+    dimension: c_OtherHomeCities_TempleCity {
         label: "Temple City"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -507,7 +507,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_TempleCity' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Torrance {
+    dimension: c_OtherHomeCities_Torrance {
         label: "Torrance"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -518,7 +518,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Torrance' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_UniversalCity {
+    dimension: c_OtherHomeCities_UniversalCity {
         label: "UniversalCity"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -529,7 +529,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_UniversalCity' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Valencia {
+    dimension: c_OtherHomeCities_Valencia {
         label: "Valencia"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -540,7 +540,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Valencia' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_ValleyGlen {
+    dimension: c_OtherHomeCities_ValleyGlen {
         label: "Valley Glen"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -551,7 +551,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_ValleyGlen' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_ValleyVillage {
+    dimension: c_OtherHomeCities_ValleyVillage {
         label: "Valley Village"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -562,7 +562,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_ValleyVillage' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_ValVerde {
+    dimension: c_OtherHomeCities_ValVerde {
         label: "Val Verde"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -573,7 +573,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_ValVerde' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Vernon {
+    dimension: c_OtherHomeCities_Vernon {
         label: "Vernon"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -584,7 +584,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Vernon' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Walnut {
+    dimension: c_OtherHomeCities_Walnut {
         label: "Walnut"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -595,7 +595,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Walnut' AS INT))
          );;
     }
-	dimension: c_CommunityNoHousing {
+    dimension: c_CommunityNoHousing {
         label: "5. What community, if any, will you not accept offers for housing in?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -606,7 +606,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_CommunityNoHousing' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_WestCovina {
+    dimension: c_OtherHomeCities_WestCovina {
         label: "West Covina"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -617,7 +617,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_WestCovina' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_WestHollywood {
+    dimension: c_OtherHomeCities_WestHollywood {
         label: "West Hollywood"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -628,7 +628,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_WestHollywood' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_WestlakeVillage {
+    dimension: c_OtherHomeCities_WestlakeVillage {
         label: "West lake Village"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -639,7 +639,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_WestlakeVillage' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Whittier {
+    dimension: c_OtherHomeCities_Whittier {
         label: "Whittier"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -650,7 +650,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Whittier' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Wilmington {
+    dimension: c_OtherHomeCities_Wilmington {
         label: "Wilmington"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -661,7 +661,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Wilmington' AS INT))
          );;
     }
-	dimension: c_OtherReqs_1stFloor {
+    dimension: c_OtherReqs_1stFloor {
         label: "1st Floor"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -672,7 +672,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherReqs_1stFloor' AS INT))
          );;
     }
-	dimension: c_OtherReqs_Elevator {
+    dimension: c_OtherReqs_Elevator {
         label: "Elevator"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -683,7 +683,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherReqs_Elevator' AS INT))
          );;
     }
-	dimension: c_OtherReqs_Kitchenette {
+    dimension: c_OtherReqs_Kitchenette {
         label: "Kitchenette"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -694,7 +694,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherReqs_Kitchenette' AS INT))
          );;
     }
-	dimension: c_OtherReqs_NA {
+    dimension: c_OtherReqs_NA {
         label: "N/A"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -705,7 +705,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherReqs_NA' AS INT))
          );;
     }
-	dimension: c_OtherReqs_Other_specifyin {
+    dimension: c_OtherReqs_Other_specifyin {
         label: "Other (specify in comments)"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -716,7 +716,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherReqs_Other_specifyin' AS INT))
          );;
     }
-	dimension: c_OtherReqs_PrivateBathroom {
+    dimension: c_OtherReqs_PrivateBathroom {
         label: "Private Bathroom"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -727,7 +727,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherReqs_PrivateBathroom' AS INT))
          );;
     }
-	dimension: c_OtherReqs_PublicTransit {
+    dimension: c_OtherReqs_PublicTransit {
         label: "Public Transit"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -738,7 +738,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherReqs_PublicTransit' AS INT))
          );;
     }
-	dimension: c_OtherReqs_UpperFloor {
+    dimension: c_OtherReqs_UpperFloor {
         label: "Upper Floor"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -749,7 +749,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherReqs_UpperFloor' AS INT))
          );;
     }
-	dimension: c_parole {
+    dimension: c_parole {
         label: "13. Are you currently on parole or probation?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -760,7 +760,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_parole' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_1 {
+    dimension: c_RegionforHousing_1 {
         label: "4. Is this region - where I'm surveying you right now - where you're looking to be housed? (Surveyor Note: Location may be different from answer to Q1/1a)"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -771,7 +771,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_1' AS INT))
          );;
     }
-	dimension: c_PaytowardsSecurityDeposit {
+    dimension: c_PaytowardsSecurityDeposit {
         label: "6. If you were able to locate housing, do you have money saved up for move-in or housing?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -782,7 +782,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_PaytowardsSecurityDeposit' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA1_Lancaster {
+    dimension: c_RegionforHousing_SPA1_Lancaster {
         label: "RegionforHousing SPA1 Lancaster"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -793,7 +793,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA1_Lancaster' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA1_Other {
+    dimension: c_RegionforHousing_SPA1_Other {
         label: "RegionforHousing SPA1 Other"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -804,7 +804,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA1_Other' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA1_Palmdale {
+    dimension: c_RegionforHousing_SPA1_Palmdale {
         label: "RegionforHousing SPA1 Palmdale"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -815,7 +815,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA1_Palmdale' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA2_Central {
+    dimension: c_RegionforHousing_SPA2_Central {
         label: "RegionforHousing SPA2 Central"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -826,7 +826,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA2_Central' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA2_East {
+    dimension: c_RegionforHousing_SPA2_East {
         label: "RegionforHousing SPA2 East"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -837,7 +837,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA2_East' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA2_Glendale {
+    dimension: c_RegionforHousing_SPA2_Glendale {
         label: "RegionforHousing SPA2 Glendale"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -848,7 +848,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA2_Glendale' AS INT))
          );;
     }
-	dimension: c_pet {
+    dimension: c_pet {
         label: "15. Do you have a pet?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -859,7 +859,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_pet' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA2_North {
+    dimension: c_RegionforHousing_SPA2_North {
         label: "RegionforHousing SPA2 North"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -870,7 +870,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA2_North' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA2_West {
+    dimension: c_RegionforHousing_SPA2_West {
         label: "RegionforHousing SPA2 West"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -881,7 +881,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA2_West' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA3_Central {
+    dimension: c_RegionforHousing_SPA3_Central {
         label: "RegionforHousing SPA3 Central"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -892,7 +892,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA3_Central' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA3_East {
+    dimension: c_RegionforHousing_SPA3_East {
         label: "RegionforHousing SPA3 East"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -903,7 +903,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA3_East' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA3_West {
+    dimension: c_RegionforHousing_SPA3_West {
         label: "RegionforHousing SPA3 West"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -914,7 +914,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA3_West' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA4_Downtown {
+    dimension: c_RegionforHousing_SPA4_Downtown {
         label: "RegionforHousing SPA4 Downtown"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -925,7 +925,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA4_Downtown' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA4_Hollywood {
+    dimension: c_RegionforHousing_SPA4_Hollywood {
         label: "RegionforHousing SPA4 Hollywood"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -936,7 +936,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA4_Hollywood' AS INT))
          );;
     }
-	dimension: c_PetType {
+    dimension: c_PetType {
         label: "15a. If yes, is it a certified service animal or emotional support animal?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -947,7 +947,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_PetType' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA4_Mid_Wilshi {
+    dimension: c_RegionforHousing_SPA4_Mid_Wilshi {
         label: "RegionforHousing SPA4 Mid Wilshi"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -958,7 +958,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA4_Mid_Wilshi' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA4_NorthEastL {
+    dimension: c_RegionforHousing_SPA4_NorthEastL {
         label: "RegionforHousing SPA4 NorthEastL"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -969,7 +969,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA4_NorthEastL' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA4_Silverlake {
+    dimension: c_RegionforHousing_SPA4_Silverlake {
         label: "RegionforHousing SPA4 Silverlake"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -980,7 +980,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA4_Silverlake' AS INT))
          );;
     }
-	dimension: c_PHAEviction {
+    dimension: c_PHAEviction {
         label: "9. Were any of the evictions from Public Housing Authority units?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -991,7 +991,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_PHAEviction' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA5_WestLA {
+    dimension: c_RegionforHousing_SPA5_WestLA {
         label: "RegionforHousing SPA5 WestLA"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1002,7 +1002,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA5_WestLA' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA6_North {
+    dimension: c_RegionforHousing_SPA6_North {
         label: "RegionforHousing SPA6 North"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1013,7 +1013,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA6_North' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA6_South {
+    dimension: c_RegionforHousing_SPA6_South {
         label: "RegionforHousing SPA6 South"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1024,7 +1024,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA6_South' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA6_SouthEast {
+    dimension: c_RegionforHousing_SPA6_SouthEast {
         label: "RegionforHousing SPA6 SouthEast"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1035,7 +1035,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA6_SouthEast' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA6_West {
+    dimension: c_RegionforHousing_SPA6_West {
         label: "RegionforHousing SPA6 West"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1046,7 +1046,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA6_West' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA7_LCA1_Centr {
+    dimension: c_RegionforHousing_SPA7_LCA1_Centr {
         label: "RegionforHousing SPA7 LCA1 Centr"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1057,7 +1057,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA7_LCA1_Centr' AS INT))
          );;
     }
-	dimension: c_PHAFraud {
+    dimension: c_PHAFraud {
         label: "9a. If you've been evicted from a PHA unit, was it due to fraud?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1068,7 +1068,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_PHAFraud' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA7_LCA2_North {
+    dimension: c_RegionforHousing_SPA7_LCA2_North {
         label: "RegionforHousing SPA7 LCA2 North"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1079,7 +1079,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA7_LCA2_North' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA7_LCA3_South {
+    dimension: c_RegionforHousing_SPA7_LCA3_South {
         label: "RegionforHousing SPA7 LCA3 South"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1090,7 +1090,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA7_LCA3_South' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA7_LCA4_LongB {
+    dimension: c_RegionforHousing_SPA7_LCA4_LongB {
         label: "RegionforHousing SPA7 LCA4 LongB"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1101,7 +1101,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA7_LCA4_LongB' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA8_BeachCitie {
+    dimension: c_RegionforHousing_SPA8_BeachCitie {
         label: "RegionforHousing SPA8 BeachCitie"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1112,7 +1112,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA8_BeachCitie' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA8_HarborArea {
+    dimension: c_RegionforHousing_SPA8_HarborArea {
         label: "RegionforHousing SPA8 HarborArea"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1123,7 +1123,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA8_HarborArea' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA8_LongBeach {
+    dimension: c_RegionforHousing_SPA8_LongBeach {
         label: "RegionforHousing SPA8 LongBeach"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1134,7 +1134,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA8_LongBeach' AS INT))
          );;
     }
-	dimension: c_PHAPaymentPlan {
+    dimension: c_PHAPaymentPlan {
         label: "9c1. If yes, do you have a payment plan in place?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1145,7 +1145,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_PHAPaymentPlan' AS INT))
          );;
     }
-	dimension: c_RegionforHousing_SPA8_North {
+    dimension: c_RegionforHousing_SPA8_North {
         label: "RegionforHousing SPA8 North"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1156,7 +1156,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_RegionforHousing_SPA8_North' AS INT))
          );;
     }
-	dimension: c_PHAUnitDamage {
+    dimension: c_PHAUnitDamage {
         label: "9b. If you've been evicted from a PHA unit, was it due to unit damage?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1167,7 +1167,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_PHAUnitDamage' AS INT))
          );;
     }
-	dimension: c_SharedHousing {
+    dimension: c_SharedHousing {
         label: "Do you need shared housing? (Two or more unrelated people share a 2 or more bedroom unit)"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1178,7 +1178,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_SharedHousing' AS INT))
          );;
     }
-	dimension: c_Smoking {
+    dimension: c_Smoking {
         label: "14. Do you need a smoking or non-smoking apartment?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1189,7 +1189,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_Smoking' AS INT))
          );;
     }
-	dimension: c_SPAforHousing {
+    dimension: c_SPAforHousing {
         label: "SPA for Housing"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1200,7 +1200,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_SPAforHousing' AS INT))
          );;
     }
-	dimension: c_SurveyLocationforHousing {
+    dimension: c_SurveyLocationforHousing {
         label: "Is this community - where I'm surveying you right now - where you're looking to be housed?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1211,7 +1211,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_SurveyLocationforHousing' AS INT))
          );;
     }
-	dimension: c_ViolentFelony {
+    dimension: c_ViolentFelony {
         label: "10c. If you've been convicted, were any of the felonies considered violent?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1222,7 +1222,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_ViolentFelony' AS INT))
          );;
     }
-	dimension: c_FelonyDescription {
+    dimension: c_FelonyDescription {
         label: "10a. If yes, please describe all felonies for which you have been convicted?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1233,7 +1233,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_FelonyDescription' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_AgouraHills {
+    dimension: c_OtherHomeCities_AgouraHills {
         label: "Agoura Hills"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1244,7 +1244,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_AgouraHills' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Alhambra {
+    dimension: c_OtherHomeCities_Alhambra {
         label: "Alhambra"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1255,7 +1255,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Alhambra' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Arcadia {
+    dimension: c_OtherHomeCities_Arcadia {
         label: "Arcadia"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1266,7 +1266,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Arcadia' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Artesia {
+    dimension: c_OtherHomeCities_Artesia {
         label: "Artesia"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1277,7 +1277,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Artesia' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Avalon {
+    dimension: c_OtherHomeCities_Avalon {
         label: "Avalon"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1288,7 +1288,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Avalon' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Azusa {
+    dimension: c_OtherHomeCities_Azusa {
         label: "Azusa"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1299,7 +1299,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Azusa' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_BaldwinPark {
+    dimension: c_OtherHomeCities_BaldwinPark {
         label: "Baldwin Park"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1310,7 +1310,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_BaldwinPark' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Bell {
+    dimension: c_OtherHomeCities_Bell {
         label: "Bell"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1321,7 +1321,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Bell' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Bellflower {
+    dimension: c_OtherHomeCities_Bellflower {
         label: "Bellflower"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1332,7 +1332,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Bellflower' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_BellGardens {
+    dimension: c_OtherHomeCities_BellGardens {
         label: "Bell Gardens"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1343,7 +1343,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_BellGardens' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_BeverlyHills {
+    dimension: c_OtherHomeCities_BeverlyHills {
         label: "Beverly Hills"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1354,7 +1354,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_BeverlyHills' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Bradbury {
+    dimension: c_OtherHomeCities_Bradbury {
         label: "Bradbury"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1365,7 +1365,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Bradbury' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Burbank {
+    dimension: c_OtherHomeCities_Burbank {
         label: "Burbank"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1376,7 +1376,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Burbank' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Calabasas {
+    dimension: c_OtherHomeCities_Calabasas {
         label: "Calabasas"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1387,7 +1387,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Calabasas' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Carson {
+    dimension: c_OtherHomeCities_Carson {
         label: "Carson"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1398,7 +1398,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Carson' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Cerritos {
+    dimension: c_OtherHomeCities_Cerritos {
         label: "Cerritos"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1409,7 +1409,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Cerritos' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Claremont {
+    dimension: c_OtherHomeCities_Claremont {
         label: "Claremont"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1420,7 +1420,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Claremont' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Commerce {
+    dimension: c_OtherHomeCities_Commerce {
         label: "Commerce"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1431,7 +1431,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Commerce' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Compton {
+    dimension: c_OtherHomeCities_Compton {
         label: "Compton"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1442,7 +1442,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Compton' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Covina {
+    dimension: c_OtherHomeCities_Covina {
         label: "Covina"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1453,7 +1453,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Covina' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Cudahy {
+    dimension: c_OtherHomeCities_Cudahy {
         label: "Cudahy"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1464,7 +1464,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Cudahy' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_CulverCity {
+    dimension: c_OtherHomeCities_CulverCity {
         label: "Culver City"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1475,7 +1475,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_CulverCity' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_DiamondBar {
+    dimension: c_OtherHomeCities_DiamondBar {
         label: "Diamond Bar"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1486,7 +1486,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_DiamondBar' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Downey {
+    dimension: c_OtherHomeCities_Downey {
         label: "Downey"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1497,7 +1497,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Downey' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Duarte {
+    dimension: c_OtherHomeCities_Duarte {
         label: "Duarte"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1508,7 +1508,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Duarte' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_ElMonte {
+    dimension: c_OtherHomeCities_ElMonte {
         label: "El Monte"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1519,7 +1519,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_ElMonte' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_ElSegundo {
+    dimension: c_OtherHomeCities_ElSegundo {
         label: "El Segundo"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1530,7 +1530,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_ElSegundo' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Gardena {
+    dimension: c_OtherHomeCities_Gardena {
         label: "Gardena"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1541,7 +1541,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Gardena' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Glendale {
+    dimension: c_OtherHomeCities_Glendale {
         label: "Glendale"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1552,7 +1552,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Glendale' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Glendora {
+    dimension: c_OtherHomeCities_Glendora {
         label: "Glendora"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1563,7 +1563,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Glendora' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_HaciendaHeights {
+    dimension: c_OtherHomeCities_HaciendaHeights {
         label: "Hacienda Heights"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1574,7 +1574,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_HaciendaHeights' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_HarborCity {
+    dimension: c_OtherHomeCities_HarborCity {
         label: "Harbor City"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1585,7 +1585,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_HarborCity' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_HawaiianGardens {
+    dimension: c_OtherHomeCities_HawaiianGardens {
         label: "Hawaiian Gardens"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1596,7 +1596,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_HawaiianGardens' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Hawthorne {
+    dimension: c_OtherHomeCities_Hawthorne {
         label: "Hawthorne"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1607,7 +1607,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Hawthorne' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_HermoseBeach {
+    dimension: c_OtherHomeCities_HermoseBeach {
         label: "Hermose Beach"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1618,7 +1618,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_HermoseBeach' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_HiddenHills {
+    dimension: c_OtherHomeCities_HiddenHills {
         label: "Hidden Hills"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1629,7 +1629,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_HiddenHills' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_HuntingtonPark {
+    dimension: c_OtherHomeCities_HuntingtonPark {
         label: "Huntington Park"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1640,7 +1640,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_HuntingtonPark' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Industry {
+    dimension: c_OtherHomeCities_Industry {
         label: "Industry"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1651,7 +1651,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Industry' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Inglewood {
+    dimension: c_OtherHomeCities_Inglewood {
         label: "Inglewood"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1662,7 +1662,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Inglewood' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Irwindale {
+    dimension: c_OtherHomeCities_Irwindale {
         label: "Irwindale"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1673,7 +1673,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Irwindale' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_LaCanada {
+    dimension: c_OtherHomeCities_LaCanada {
         label: "La Canada"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1684,7 +1684,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_LaCanada' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_LaCanadaFlintri {
+    dimension: c_OtherHomeCities_LaCanadaFlintri {
         label: "La Canada Flintri"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1695,7 +1695,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_LaCanadaFlintri' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_LaCrescenta {
+    dimension: c_OtherHomeCities_LaCrescenta {
         label: "La Crescenta"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1706,7 +1706,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_LaCrescenta' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_LaHabraHeights {
+    dimension: c_OtherHomeCities_LaHabraHeights {
         label: "La Habra Heights"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1717,7 +1717,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_LaHabraHeights' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Lakewood {
+    dimension: c_OtherHomeCities_Lakewood {
         label: "Lakewood"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1728,7 +1728,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Lakewood' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_LaMirada {
+    dimension: c_OtherHomeCities_LaMirada {
         label: "La Mirada"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1739,7 +1739,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_LaMirada' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Lancaster {
+    dimension: c_OtherHomeCities_Lancaster {
         label: "Lancaster"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1750,7 +1750,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Lancaster' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_LaPuente {
+    dimension: c_OtherHomeCities_LaPuente {
         label: "La Puente"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1761,7 +1761,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_LaPuente' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_LaVerne {
+    dimension: c_OtherHomeCities_LaVerne {
         label: "La Verne"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1772,7 +1772,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_LaVerne' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Lawndale {
+    dimension: c_OtherHomeCities_Lawndale {
         label: "Lawndale"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1783,7 +1783,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Lawndale' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Lomita {
+    dimension: c_OtherHomeCities_Lomita {
         label: "Lomita"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1794,7 +1794,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Lomita' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_LongBeach {
+    dimension: c_OtherHomeCities_LongBeach {
         label: "Long Beach"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1805,7 +1805,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_LongBeach' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_LosAngeles {
+    dimension: c_OtherHomeCities_LosAngeles {
         label: "Los Angeles"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1816,7 +1816,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_LosAngeles' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Lynwood {
+    dimension: c_OtherHomeCities_Lynwood {
         label: "Lynwood"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1827,7 +1827,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Lynwood' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Malibu {
+    dimension: c_OtherHomeCities_Malibu {
         label: "Malibu"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1838,7 +1838,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Malibu' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_ManhattanBeach {
+    dimension: c_OtherHomeCities_ManhattanBeach {
         label: "Manhattan Beach"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1849,7 +1849,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_ManhattanBeach' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Maywood {
+    dimension: c_OtherHomeCities_Maywood {
         label: "Maywood"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1860,7 +1860,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Maywood' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_MissionsHills {
+    dimension: c_OtherHomeCities_MissionsHills {
         label: "Missions Hills"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1871,7 +1871,7 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_MissionsHills' AS INT))
          );;
     }
-	dimension: c_OtherHomeCities_Monrovia {
+    dimension: c_OtherHomeCities_Monrovia {
         label: "Monrovia"
         group_label: "Questions"
         sql: (SELECT pl.value_name
@@ -1882,6 +1882,6 @@ view: housing_preference {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_OtherHomeCities_Monrovia' AS INT))
          );;
     }
-	######## End: Assessment Questions ############
+    ######## End: Assessment Questions ############
 
 }
