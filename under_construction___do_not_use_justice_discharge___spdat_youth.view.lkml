@@ -1,4 +1,4 @@
-include: "//clarity_basemodel/explore_hmis_performance.view.lkml"
+include: "//clarity_basemodel/interface_custom_assessments.view.lkml"
 view: under_construction___do_not_use_justice_discharge___spdat_youth {
 
 	extends: [interface_custom_assessments]

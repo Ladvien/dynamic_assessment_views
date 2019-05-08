@@ -1,4 +1,4 @@
-include: "//clarity_basemodel/explore_hmis_performance.view.lkml"
+include: "//clarity_basemodel/interface_custom_assessments.view.lkml"
 view: yfr_monthly_update_form {
 
 	extends: [interface_custom_assessments]

@@ -1,4 +1,4 @@
-include: "//clarity_basemodel/explore_hmis_performance.view.lkml"
+include: "//clarity_basemodel/interface_custom_assessments.view.lkml"
 view: ces_for_youth___full_spdat {
 
 	extends: [interface_custom_assessments]
