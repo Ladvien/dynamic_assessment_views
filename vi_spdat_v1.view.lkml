@@ -12,17 +12,6 @@ view: vi_spdat_v1 {
     }
     ######## Begin: Assessment Questions ############
 
-    dimension:   {
-        label: " "
-        group_label: "Questions"
-        sql: (SELECT pl.value_name
-            FROM picklist AS pl
-            WHERE pl.field_name = ' '
-                AND pl.code <> ''
-                AND IF(COLUMN_GET(${TABLE}.custom_data, ' ' AS INT) IS NULL, FALSE, 
-                       pl.code = COLUMN_GET(${TABLE}.custom_data, ' ' AS INT))
-         );;
-    }
     dimension: c_Interviewer_Organization {
         label: "Interviewer's Organization"
         group_label: "Questions"

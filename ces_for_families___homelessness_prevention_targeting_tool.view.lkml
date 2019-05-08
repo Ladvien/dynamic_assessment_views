@@ -12,17 +12,6 @@ view: ces_for_families___homelessness_prevention_targeting_tool {
     }
     ######## Begin: Assessment Questions ############
 
-    dimension:   {
-        label: " "
-        group_label: "Questions"
-        sql: (SELECT pl.value_name
-            FROM picklist AS pl
-            WHERE pl.field_name = ' '
-                AND pl.code <> ''
-                AND IF(COLUMN_GET(${TABLE}.custom_data, ' ' AS INT) IS NULL, FALSE, 
-                       pl.code = COLUMN_GET(${TABLE}.custom_data, ' ' AS INT))
-         );;
-    }
     dimension: c_30_days_vacate_notice {
         label: "Have recieved a 30-day notice to vacate or experiencing a housing crisis that will lead to an expected loss of housing within 1 month."
         group_label: "Questions"

@@ -12,17 +12,6 @@ view: ces_for_families___vi_fspdat_v2 {
     }
     ######## Begin: Assessment Questions ############
 
-    dimension:   {
-        label: " "
-        group_label: "Questions"
-        sql: (SELECT pl.value_name
-            FROM picklist AS pl
-            WHERE pl.field_name = ' '
-                AND pl.code <> ''
-                AND IF(COLUMN_GET(${TABLE}.custom_data, ' ' AS INT) IS NULL, FALSE, 
-                       pl.code = COLUMN_GET(${TABLE}.custom_data, ' ' AS INT))
-         );;
-    }
     dimension: c_Contact_Phone {
         label: "Contact Phone"
         group_label: "Questions"
