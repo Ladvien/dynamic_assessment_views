@@ -169,7 +169,7 @@ view: ces_for_individuals___homelessness_prevention_targeting_tool {
          );;
     }
 	dimension: c_Lease_Holder_Received_Notice_Youth_Or_Adult {
-        label: "If LEASE HOLDER, the Youth has received a notice of Unlawful Detainer ('Eviction') lawsuit by the property owner or manager. An unlawful detainer is a formal eviction that is filed in justice court"
+        # label: "If LEASE HOLDER, the Youth has received a notice of Unlawful Detainer ('Eviction') lawsuit by the property owner or manager. An unlawful detainer is a formal eviction that is filed in justice court"
         group_label: "Questions"
         sql: (SELECT pl.value_name
             FROM picklist AS pl
