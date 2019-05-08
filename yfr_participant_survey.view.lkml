@@ -6,7 +6,6 @@ view: yfr_participant_survey {
 	sql_table_name: client_assessment_data;;
 
 	dimension: id {
-        view_label: "YFR Participant Survey"
         label: "Id -- YFR Participant Survey"
         primary_key: yes
         sql: ${TABLE}.id;;

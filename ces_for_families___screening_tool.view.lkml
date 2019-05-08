@@ -6,7 +6,6 @@ view: ces_for_families___screening_tool {
 	sql_table_name: client_assessment_data;;
 
 	dimension: id {
-        view_label: "CES for Families - Screening Tool"
         label: "Id -- CES for Families - Screening Tool"
         primary_key: yes
         sql: ${TABLE}.id;;

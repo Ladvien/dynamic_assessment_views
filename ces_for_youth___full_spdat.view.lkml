@@ -6,7 +6,6 @@ view: ces_for_youth___full_spdat {
 	sql_table_name: client_assessment_data;;
 
 	dimension: id {
-        view_label: "CES for Youth - Full SPDAT"
         label: "Id -- CES for Youth - Full SPDAT"
         primary_key: yes
         sql: ${TABLE}.id;;

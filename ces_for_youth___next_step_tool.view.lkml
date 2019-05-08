@@ -6,7 +6,6 @@ view: ces_for_youth___next_step_tool {
 	sql_table_name: client_assessment_data;;
 
 	dimension: id {
-        view_label: "CES for Youth - Next Step Tool"
         label: "Id -- CES for Youth - Next Step Tool"
         primary_key: yes
         sql: ${TABLE}.id;;
