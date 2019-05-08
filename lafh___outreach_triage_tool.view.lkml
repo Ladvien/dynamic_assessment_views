@@ -1,4 +1,4 @@
-include: "//lookml_remote_test/interface_custom_assessments.view.lkml"
+include: "interface_custom_assessments.view.lkml"
 view: lafh___outreach_triage_tool {
 
 	extends: [interface_custom_assessments]

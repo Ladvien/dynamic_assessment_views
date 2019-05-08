@@ -1,4 +1,4 @@
-include: "//lookml_remote_test/interface_custom_assessments.view.lkml"
+include: "interface_custom_assessments.view.lkml"
 view: ces_for_families___full_f_spdat {
 
 	extends: [interface_custom_assessments]

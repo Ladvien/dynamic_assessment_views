@@ -1,4 +1,4 @@
-include: "//lookml_remote_test/interface_custom_assessments.view.lkml"
+include: "interface_custom_assessments.view.lkml"
 view: ces_for_youth___homelessness_prevention_targeting_tool {
 
 	extends: [interface_custom_assessments]

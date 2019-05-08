@@ -1,4 +1,4 @@
-include: "//lookml_remote_test/interface_custom_assessments.view.lkml"
+include: "interface_custom_assessments.view.lkml"
 view: under_construction___do_not_use_justice_discharge___spdat_youth {
 
 	extends: [interface_custom_assessments]

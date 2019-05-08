@@ -1,4 +1,4 @@
-include: "//lookml_remote_test/interface_custom_assessments.view.lkml"
+include: "interface_custom_assessments.view.lkml"
 view: ces_for_individuals___ces_survey_part_2_assessment_only {
 
 	extends: [interface_custom_assessments]

@@ -1,4 +1,4 @@
-include: "//lookml_remote_test/interface_custom_assessments.view.lkml"
+include: "interface_custom_assessments.view.lkml"
 view: dpss_crisis_housing_order_form {
 
 	extends: [interface_custom_assessments]

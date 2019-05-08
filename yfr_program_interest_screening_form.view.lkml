@@ -1,4 +1,4 @@
-include: "//lookml_remote_test/interface_custom_assessments.view.lkml"
+include: "interface_custom_assessments.view.lkml"
 view: yfr_program_interest_screening_form {
 
 	extends: [interface_custom_assessments]
