@@ -1036,7 +1036,7 @@ view: ces_for_youth___next_step_tool {
          );;
     }
 	dimension: c_Interest_In_Building_Family_Relationship {
-        label: "51. Are you interested in receiving support to build or strengthen your relationship with family? Please note that "family" refers to both biological and non-biological. "
+        label: "51. Are you interested in receiving support to build or strengthen your relationship with family? Please note that 'family' refers to both biological and non-biological. "
         group_label: "Questions"
         sql: (SELECT pl.value_name
             FROM picklist AS pl

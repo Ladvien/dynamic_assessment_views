@@ -540,19 +540,19 @@ view: under_construction___do_not_use_justice_discharge___spdat_youth {
                        pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_How_Many_Times_DHS_Accessed' AS INT))
          );;
     }
-	dimension: c_How_many_times_received_medical_care_at__infirmary_health_clinic {
+	dimension: c_How_many_times_received_medical_care_at_infirmary_health_clinic {
         label: "a) Received medical care at an infirmary/health clinic?"
         group_label: "Questions"
         sql: (SELECT pl.value_name
             FROM picklist AS pl
-            WHERE pl.field_name = 'c_How_many_times_received_medical_care_at__infirmary_health_clinic'
+            WHERE pl.field_name = 'c_How_many_times_received_medical_care_at_infirmary_health_clinic'
                 AND pl.code <> ''
-                AND IF(COLUMN_GET(${TABLE}.custom_data, 'c_How_many_times_received_medical_care_at__infirmary_health_clinic' AS INT) IS NULL, FALSE, 
-                       pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_How_many_times_received_medical_care_at__infirmary_health_clinic' AS INT))
+                AND IF(COLUMN_GET(${TABLE}.custom_data, 'c_How_many_times_received_medical_care_at_infirmary_health_clinic' AS INT) IS NULL, FALSE, 
+                       pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_How_many_times_received_medical_care_at_infirmary_health_clinic' AS INT))
          );;
     }
 	dimension: c_Interest_In_Building_Family_Relationship {
-        label: "51. Are you interested in receiving support to build or strengthen your relationship with family? Please note that "family" refers to both biological and non-biological. "
+        label: "51. Are you interested in receiving support to build or strengthen your relationship with family? Please note that 'family' refers to both biological and non-biological. "
         group_label: "Questions"
         sql: (SELECT pl.value_name
             FROM picklist AS pl
