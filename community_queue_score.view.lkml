@@ -11,6 +11,17 @@ view: community_queue_score {
     }
     ######## Begin: Assessment Questions ############
 
+    dimension: c_recalculated_score {
+        label: "Recalculated Score"
+        group_label: "Questions"
+        sql: (SELECT pl.value_name
+            FROM picklist AS pl
+            WHERE pl.field_name = 'c_recalculated_score'
+                AND pl.code <> ''
+                AND IF(COLUMN_GET(${TABLE}.custom_data, 'c_recalculated_score' AS INT) IS NULL, FALSE, 
+                       pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_recalculated_score' AS INT))
+         );;
+    }
     ######## End: Assessment Questions ############
 
 }

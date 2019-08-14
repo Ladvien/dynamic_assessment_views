@@ -11,6 +11,17 @@ view: vi_y_spdat_prescreen_for_transition_age_youth_marin {
     }
     ######## Begin: Assessment Questions ############
 
+    dimension: c_years_homeless_since_leaving_parents {
+        label: "Since you moved away from your parents or foster parents, how many years in your entire life have you lived on the streets or in emergency shelter?"
+        group_label: "Questions"
+        sql: (SELECT pl.value_name
+            FROM picklist AS pl
+            WHERE pl.field_name = 'c_years_homeless_since_leaving_parents'
+                AND pl.code <> ''
+                AND IF(COLUMN_GET(${TABLE}.custom_data, 'c_years_homeless_since_leaving_parents' AS INT) IS NULL, FALSE, 
+                       pl.code = COLUMN_GET(${TABLE}.custom_data, 'c_years_homeless_since_leaving_parents' AS INT))
+         );;
+    }
     ######## End: Assessment Questions ############
 
 }
