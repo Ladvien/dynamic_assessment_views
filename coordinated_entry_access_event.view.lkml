@@ -2,7 +2,6 @@ include: "interface_custom_assessments.view.lkml"
 view: coordinated_entry_access_event {
 
     extends: [interface_custom_assessments]
-
     sql_table_name: client_assessment_data;;
 
 		dimension: id {

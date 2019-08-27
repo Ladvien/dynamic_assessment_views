@@ -2,7 +2,6 @@ include: "interface_custom_assessments.view.lkml"
 view: vi_spdat_prescreen_for_single_adults_marin {
 
     extends: [interface_custom_assessments]
-
     sql_table_name: client_assessment_data;;
 
 		dimension: id {

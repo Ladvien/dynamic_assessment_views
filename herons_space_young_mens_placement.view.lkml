@@ -2,7 +2,6 @@ include: "interface_custom_assessments.view.lkml"
 view: herons_space_young_mens_placement {
 
     extends: [interface_custom_assessments]
-
     sql_table_name: client_assessment_data;;
 
 		dimension: id {
